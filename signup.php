@@ -21,8 +21,8 @@ session_start();
 
 			// echo "<script> alert('Sign Up succesfully')</script>"; // VERİTABANINA KAYDETSE BURASI SAYFADA ÇIKAR !!
 
-			// header("Location: login.php");
-			// die;
+			header("Location: login.php");
+			die;
 		}else
 		{
 			echo "Please enter some valid information!";
