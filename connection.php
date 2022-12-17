@@ -1,3 +1,5 @@
+
+<!-- DATABASE BAGLAMA -->
 <?php
 
 $dbhost = "localhost";
