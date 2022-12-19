@@ -1,5 +1,3 @@
-
-<!-- DATABASE BAGLAMA -->
 <?php
 
 $dbhost = "localhost";
@@ -9,6 +7,5 @@ $dbname = "signuptb";
 
 if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
 {
-
 	die("Bağlantı hatası!");
 }

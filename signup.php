@@ -1,4 +1,9 @@
 <?php 
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 
 	include("connection.php");
@@ -9,23 +14,26 @@ session_start();
 	{
 		$user_name = $_POST['user_name'];
 		$password = $_POST['password'];
+        $mail = $_POST['mail'];
+
 
 		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
 		{
 
 			// DATABASE'E KAYDETME
 			$user_id = random_num(20);
-			$query = "INSERT INTO users(user_id, user_name, password) VALUES ('$user_id','$user_name','$password')";
+			$query = "INSERT INTO users(user_id, user_name, mail,  password) VALUES ('$user_id','$user_name','$mail','$password')";
+            //$query = "INSERT INTO users(user_id, user_name, password) VALUES (?,?,?)";
 
 			mysqli_query($con, $query);
 
-			// echo "<script> alert('Sign Up succesfully')</script>"; // VERİTABANINA KAYDETSE BURASI SAYFADA ÇIKAR !!
+			// echo "<script> alert('Sign Up succesful')</script>"; // VERİTABANINA KAYDETSE BURASI SAYFADA ÇIKAR !!
 
 			header("Location: login.php");
 			die;
 		}else
 		{
-			echo "Please enter some valid information!";
+			echo "Doğru bilgi girin lütfen";
 		}
 	}
 ?>
@@ -269,14 +277,14 @@ session_start();
         }
 
         /* @media screen and (max-width: 630px) {
-    .section {
+        .section {
         display: flex;
         min-height: 100vh;
         align-items: center;
         justify-content: center;
         background: linear-gradient(to bottom, #000000, #000000);
-    }
-} */
+        }
+}       */
     .pass-alert{
         margin-top: 3px;
     }
@@ -297,14 +305,14 @@ session_start();
             <div class="container">
                 <div class="form">
                     <h2>Sign Up Form</h2>
-                    <form method="POST">     
+                    <form method="post">     
                         <!-- username -->
                         <div class="input__box">
-                            <input type="text" name="username" placeholder="Username" required />
+                            <input type="text" name="user_name" placeholder="Username" required />
                         </div>
                         <!-- mail -->
                         <div class="input__box">
-                            <input type="email" name="user_name" id="email" placeholder="Mail" required />
+                            <input type="email" name="mail" id="email" placeholder="Mail" required />
                         </div>
                         <div class="pass">
                             <!-- password -->

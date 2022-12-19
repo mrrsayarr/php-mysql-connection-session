@@ -15,10 +15,10 @@ session_start();
 </head>
 <body>
 
-	<a href="logout.php">Logout</a>
-	<h1>This is the index page</h1>
+	<a href="logout.php">Çıkış</a>
+	<h1>Buraası anasayfa olacak</h1>
 
 	<br>
-	Hello, <?php echo $user_data['user_name']; ?>
+	Merhaab, <?php echo $user_data['user_name']; ?>
 </body>
 </html>
