@@ -1,5 +1,7 @@
 <?php 
 
+// LOGİN SAYFASI
+
 session_start();
 
 	include("connection.php");

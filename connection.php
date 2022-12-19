@@ -1,9 +1,11 @@
 <?php
 
+// DATABASE BAĞLANMA KISMI
+
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "signuptb";
+$dbname = "signuptb"; // DATABASE ADI
 
 if(!$con = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname))
 {
